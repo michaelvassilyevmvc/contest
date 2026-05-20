@@ -1,8 +1,7 @@
 ﻿namespace contest.CompetitionService.DTOs;
 
-public class CompetitionDto
+public class CreateCompetitionDto
 {
-    public Guid Id { get; set; }
     public string Title { get; set; }
     public string SportType { get; set; }
     public DateTime StartDate { get; set; }
