@@ -6,6 +6,6 @@ public class UpdateVenueDto
 {
     public string Name { get; set; }
     public Address Address { get; set; }
-    public int Capacity { get; set; }
-    public VenueType VenueType { get; set; }
+    public int? Capacity { get; set; }
+    public VenueType? VenueType { get; set; }
 }
