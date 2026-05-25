@@ -14,11 +14,16 @@ public class DbInitializer
     private static void SeedData(CompetitionDbContext context)
     {
         context.Database.Migrate();
+
         if (context.Competitions.Any())
         {
-            Console.WriteLine("Already have data - no need  to seed.");
+            Console.WriteLine("Already have data - no need to seed.");
             return;
         }
+
+        // ==========================
+        // VENUES
+        // ==========================
 
         var venue1Id = Guid.NewGuid();
         var venue2Id = Guid.NewGuid();
@@ -33,11 +38,13 @@ public class DbInitializer
                 Id = venue1Id,
                 Name = "Центральный стадион",
                 Capacity = 12000,
-                VenueType = VenueType.OpenAir,
+                VenueType = VenueType.Stadium,
                 Address = new Address
                 {
                     City = "Караганда",
-                    Street = "пр. Бухар-Жырау 55"
+                    Street = "пр. Бухар-Жырау 55",
+                    State = "Карагандинская область",
+                    ZipCode = "100000"
                 }
             },
 
@@ -50,7 +57,9 @@ public class DbInitializer
                 Address = new Address
                 {
                     City = "Караганда",
-                    Street = "ул. Ерубаева 48"
+                    Street = "ул. Ерубаева 48",
+                    State = "Карагандинская область",
+                    ZipCode = "100012"
                 }
             },
 
@@ -63,7 +72,9 @@ public class DbInitializer
                 Address = new Address
                 {
                     City = "Караганда",
-                    Street = "ул. Муканова 17"
+                    Street = "ул. Муканова 17",
+                    State = "Карагандинская область",
+                    ZipCode = "100019"
                 }
             },
 
@@ -76,7 +87,9 @@ public class DbInitializer
                 Address = new Address
                 {
                     City = "Караганда",
-                    Street = "ул. Ермекова 101"
+                    Street = "ул. Ермекова 101",
+                    State = "Карагандинская область",
+                    ZipCode = "100024"
                 }
             },
 
@@ -89,11 +102,16 @@ public class DbInitializer
                 Address = new Address
                 {
                     City = "Караганда",
-                    Street = "ул. Абдирова 22"
+                    Street = "ул. Абдирова 22",
+                    State = "Карагандинская область",
+                    ZipCode = "100030"
                 }
             }
         };
-        context.Venues.AddRange(venues);
+
+        // ==========================
+        // COMPETITIONS
+        // ==========================
 
         var competitions = new List<Competition>
         {
@@ -101,8 +119,8 @@ public class DbInitializer
             {
                 Title = "Чемпионат города по футболу",
                 SportType = "Football",
-                StartDate = new DateTime(2026, 6, 10, 10, 0, 0),
-                EndDate = new DateTime(2026, 6, 10, 18, 0, 0),
+                StartDate = new DateTime(2026, 6, 10, 10, 0, 0, DateTimeKind.Utc),
+                EndDate = new DateTime(2026, 6, 10, 18, 0, 0, DateTimeKind.Utc),
                 TicketPrice = 2500,
                 VenueId = venue1Id
             },
@@ -111,8 +129,8 @@ public class DbInitializer
             {
                 Title = "Открытый турнир по боксу",
                 SportType = "Boxing",
-                StartDate = new DateTime(2026, 6, 12, 12, 0, 0),
-                EndDate = new DateTime(2026, 6, 12, 20, 0, 0),
+                StartDate = new DateTime(2026, 6, 12, 12, 0, 0, DateTimeKind.Utc),
+                EndDate = new DateTime(2026, 6, 12, 20, 0, 0, DateTimeKind.Utc),
                 TicketPrice = 3500,
                 VenueId = venue2Id
             },
@@ -121,8 +139,8 @@ public class DbInitializer
             {
                 Title = "Кубок города по баскетболу",
                 SportType = "Basketball",
-                StartDate = new DateTime(2026, 6, 15, 9, 0, 0),
-                EndDate = new DateTime(2026, 6, 15, 19, 0, 0),
+                StartDate = new DateTime(2026, 6, 15, 9, 0, 0, DateTimeKind.Utc),
+                EndDate = new DateTime(2026, 6, 15, 19, 0, 0, DateTimeKind.Utc),
                 TicketPrice = 2000,
                 VenueId = venue2Id
             },
@@ -131,8 +149,8 @@ public class DbInitializer
             {
                 Title = "Первенство по плаванию",
                 SportType = "Swimming",
-                StartDate = new DateTime(2026, 6, 18, 8, 0, 0),
-                EndDate = new DateTime(2026, 6, 18, 16, 0, 0),
+                StartDate = new DateTime(2026, 6, 18, 8, 0, 0, DateTimeKind.Utc),
+                EndDate = new DateTime(2026, 6, 18, 16, 0, 0, DateTimeKind.Utc),
                 TicketPrice = 1800,
                 VenueId = venue4Id
             },
@@ -141,8 +159,8 @@ public class DbInitializer
             {
                 Title = "Городской турнир по шахматам",
                 SportType = "Chess",
-                StartDate = new DateTime(2026, 6, 20, 10, 0, 0),
-                EndDate = new DateTime(2026, 6, 20, 17, 0, 0),
+                StartDate = new DateTime(2026, 6, 20, 10, 0, 0, DateTimeKind.Utc),
+                EndDate = new DateTime(2026, 6, 20, 17, 0, 0, DateTimeKind.Utc),
                 TicketPrice = 1000,
                 VenueId = venue5Id
             },
@@ -151,8 +169,8 @@ public class DbInitializer
             {
                 Title = "Соревнования по лёгкой атлетике",
                 SportType = "Athletics",
-                StartDate = new DateTime(2026, 6, 22, 9, 0, 0),
-                EndDate = new DateTime(2026, 6, 22, 18, 0, 0),
+                StartDate = new DateTime(2026, 6, 22, 9, 0, 0, DateTimeKind.Utc),
+                EndDate = new DateTime(2026, 6, 22, 18, 0, 0, DateTimeKind.Utc),
                 TicketPrice = 3000,
                 VenueId = venue1Id
             },
@@ -161,8 +179,8 @@ public class DbInitializer
             {
                 Title = "Турнир по волейболу",
                 SportType = "Volleyball",
-                StartDate = new DateTime(2026, 6, 24, 11, 0, 0),
-                EndDate = new DateTime(2026, 6, 24, 19, 0, 0),
+                StartDate = new DateTime(2026, 6, 24, 11, 0, 0, DateTimeKind.Utc),
+                EndDate = new DateTime(2026, 6, 24, 19, 0, 0, DateTimeKind.Utc),
                 TicketPrice = 2200,
                 VenueId = venue2Id
             },
@@ -171,8 +189,8 @@ public class DbInitializer
             {
                 Title = "Открытое первенство по теннису",
                 SportType = "Tennis",
-                StartDate = new DateTime(2026, 6, 27, 10, 0, 0),
-                EndDate = new DateTime(2026, 6, 27, 18, 0, 0),
+                StartDate = new DateTime(2026, 6, 27, 10, 0, 0, DateTimeKind.Utc),
+                EndDate = new DateTime(2026, 6, 27, 18, 0, 0, DateTimeKind.Utc),
                 TicketPrice = 2700,
                 VenueId = venue3Id
             },
@@ -181,8 +199,8 @@ public class DbInitializer
             {
                 Title = "Городской турнир по дзюдо",
                 SportType = "Judo",
-                StartDate = new DateTime(2026, 6, 29, 9, 0, 0),
-                EndDate = new DateTime(2026, 6, 29, 17, 0, 0),
+                StartDate = new DateTime(2026, 6, 29, 9, 0, 0, DateTimeKind.Utc),
+                EndDate = new DateTime(2026, 6, 29, 17, 0, 0, DateTimeKind.Utc),
                 TicketPrice = 3200,
                 VenueId = venue2Id
             },
@@ -191,13 +209,175 @@ public class DbInitializer
             {
                 Title = "Чемпионат по настольному теннису",
                 SportType = "Table Tennis",
-                StartDate = new DateTime(2026, 7, 2, 10, 0, 0),
-                EndDate = new DateTime(2026, 7, 2, 16, 0, 0),
+                StartDate = new DateTime(2026, 7, 2, 10, 0, 0, DateTimeKind.Utc),
+                EndDate = new DateTime(2026, 7, 2, 16, 0, 0, DateTimeKind.Utc),
                 TicketPrice = 1500,
                 VenueId = venue3Id
             }
         };
+
+        context.Venues.AddRange(venues);
         context.Competitions.AddRange(competitions);
+        context.SaveChanges();
+
+        // ==========================
+        // PARTICIPANTS
+        // ==========================
+
+        var participants = new List<Participant>
+        {
+            new()
+            {
+                FirstName = "Алихан",
+                LastName = "Сериков",
+                BirthDate = new DateTime(2008, 4, 15, 0, 0, 0,DateTimeKind.Utc),
+                CompetitionId = competitions[0].Id,
+                Address = new Address
+                {
+                    City = "Караганда",
+                    Street = "ул. Ермекова 12",
+                    State = "Карагандинская область",
+                    ZipCode = "100008"
+                }
+            },
+
+            new()
+            {
+                FirstName = "Дамир",
+                LastName = "Касымов",
+                BirthDate = new DateTime(2007, 9, 30, 0, 0,0,DateTimeKind.Utc),
+                CompetitionId = competitions[1].Id,
+                Address = new Address
+                {
+                    City = "Темиртау",
+                    Street = "ул. Мира 11",
+                    State = "Карагандинская область",
+                    ZipCode = "101400"
+                }
+            },
+
+            new()
+            {
+                FirstName = "Аружан",
+                LastName = "Нурпеисова",
+                BirthDate = new DateTime(2009, 1, 22, 0, 0,0,DateTimeKind.Utc),
+                CompetitionId = competitions[2].Id,
+                Address = new Address
+                {
+                    City = "Караганда",
+                    Street = "пр. Республики 81",
+                    State = "Карагандинская область",
+                    ZipCode = "100017"
+                }
+            },
+
+            new()
+            {
+                FirstName = "Ерасыл",
+                LastName = "Омаров",
+                BirthDate = new DateTime(2006, 11, 8, 0, 0,0,DateTimeKind.Utc),
+                CompetitionId = competitions[3].Id,
+                Address = new Address
+                {
+                    City = "Шахтинск",
+                    Street = "ул. Ленина 5",
+                    State = "Карагандинская область",
+                    ZipCode = "101600"
+                }
+            },
+
+            new()
+            {
+                FirstName = "Мадина",
+                LastName = "Ахметова",
+                BirthDate = new DateTime(2010, 5, 30, 0, 0,0,DateTimeKind.Utc),
+                CompetitionId = competitions[4].Id,
+                Address = new Address
+                {
+                    City = "Караганда",
+                    Street = "ул. Гоголя 21",
+                    State = "Карагандинская область",
+                    ZipCode = "100021"
+                }
+            },
+
+            new()
+            {
+                FirstName = "Никита",
+                LastName = "Волков",
+                BirthDate = new DateTime(2008, 7, 14, 0, 0,0,DateTimeKind.Utc),
+                CompetitionId = competitions[5].Id,
+                Address = new Address
+                {
+                    City = "Темиртау",
+                    Street = "ул. Победы 17",
+                    State = "Карагандинская область",
+                    ZipCode = "101403"
+                }
+            },
+
+            new()
+            {
+                FirstName = "София",
+                LastName = "Иванова",
+                BirthDate = new DateTime(2009, 12, 1, 0, 0,0,DateTimeKind.Utc),
+                CompetitionId = competitions[6].Id,
+                Address = new Address
+                {
+                    City = "Караганда",
+                    Street = "ул. Назарбаева 31",
+                    State = "Карагандинская область",
+                    ZipCode = "100020"
+                }
+            },
+
+            new()
+            {
+                FirstName = "Тимур",
+                LastName = "Жумабаев",
+                BirthDate = new DateTime(2007, 2, 18, 0, 0,0,DateTimeKind.Utc),
+                CompetitionId = competitions[7].Id,
+                Address = new Address
+                {
+                    City = "Караганда",
+                    Street = "ул. Алиханова 42",
+                    State = "Карагандинская область",
+                    ZipCode = "100026"
+                }
+            },
+
+            new()
+            {
+                FirstName = "Диана",
+                LastName = "Петрова",
+                BirthDate = new DateTime(2008, 10, 9, 0, 0,0,DateTimeKind.Utc),
+                CompetitionId = competitions[8].Id,
+                Address = new Address
+                {
+                    City = "Сарань",
+                    Street = "ул. Победы 18",
+                    State = "Карагандинская область",
+                    ZipCode = "101200"
+                }
+            },
+
+            new()
+            {
+                FirstName = "Арман",
+                LastName = "Беков",
+                BirthDate = new DateTime(2006, 6, 25, 0, 0,0,DateTimeKind.Utc),
+                CompetitionId = competitions[9].Id,
+                Address = new Address
+                {
+                    City = "Караганда",
+                    Street = "ул. Мустафина 9",
+                    State = "Карагандинская область",
+                    ZipCode = "100004"
+                }
+            }
+        };
+
+        context.Participants.AddRange(participants);
         context.SaveChanges();
     }
 }

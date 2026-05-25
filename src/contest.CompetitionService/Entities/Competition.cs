@@ -12,8 +12,8 @@ public class Competition // Соревнование
     [Column("end_date")] public DateTime EndDate { get; set; }
     [Column("ticket_price")] public decimal TicketPrice { get; set; }
 
-    public Guid VenueId { get; set; }
-    public Venue Venue { get; set; }
+    public Guid? VenueId { get; set; }
+    public Venue? Venue { get; set; }
 
     public ICollection<Participant> Participants { get; set; } = new List<Participant>();
 }

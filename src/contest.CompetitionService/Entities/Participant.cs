@@ -8,7 +8,7 @@ public class Participant // Участники
     public Guid Id { get; set; } = Guid.NewGuid();
     [Column("first_name")] public required string FirstName { get; set; }
     [Column("last_name")] public required string LastName { get; set; }
-    [Column("birth_date")] public DateOnly? BirthDate { get; set; }
+    [Column("birth_date")] public DateTime BirthDate { get; set; }
     public Address Address { get; set; } = new();
 
     public Guid CompetitionId { get; set; }

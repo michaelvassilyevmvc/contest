@@ -59,7 +59,7 @@ namespace contest.CompetitionService.Data.Migrations
                     id = table.Column<Guid>(type: "uuid", nullable: false),
                     first_name = table.Column<string>(type: "text", nullable: false),
                     last_name = table.Column<string>(type: "text", nullable: false),
-                    birth_date = table.Column<DateOnly>(type: "date", nullable: true),
+                    birth_date = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     address_street = table.Column<string>(type: "text", nullable: true),
                     address_city = table.Column<string>(type: "text", nullable: true),
                     address_state = table.Column<string>(type: "text", nullable: true),

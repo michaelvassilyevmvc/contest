@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using contest.CompetitionService.Data;
@@ -11,9 +12,11 @@ using contest.CompetitionService.Data;
 namespace contest.CompetitionService.Data.Migrations
 {
     [DbContext(typeof(CompetitionDbContext))]
-    partial class CompetitionDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260522114144_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,7 +54,7 @@ namespace contest.CompetitionService.Data.Migrations
                         .HasColumnType("text")
                         .HasColumnName("title");
 
-                    b.Property<Guid?>("VenueId")
+                    b.Property<Guid>("VenueId")
                         .HasColumnType("uuid")
                         .HasColumnName("venue_id");
 
@@ -129,6 +132,8 @@ namespace contest.CompetitionService.Data.Migrations
                     b.HasOne("contest.CompetitionService.Entities.Venue", "Venue")
                         .WithMany("Competitions")
                         .HasForeignKey("VenueId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
                         .HasConstraintName("fk_competitions_venues_venue_id");
 
                     b.Navigation("Venue");

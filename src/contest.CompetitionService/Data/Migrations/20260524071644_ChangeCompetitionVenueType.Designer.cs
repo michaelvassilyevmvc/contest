@@ -12,8 +12,8 @@ using contest.CompetitionService.Data;
 namespace contest.CompetitionService.Data.Migrations
 {
     [DbContext(typeof(CompetitionDbContext))]
-    [Migration("20260519050014_Initial")]
-    partial class Initial
+    [Migration("20260524071644_ChangeCompetitionVenueType")]
+    partial class ChangeCompetitionVenueType
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,7 +54,7 @@ namespace contest.CompetitionService.Data.Migrations
                         .HasColumnType("text")
                         .HasColumnName("title");
 
-                    b.Property<Guid>("VenueId")
+                    b.Property<Guid?>("VenueId")
                         .HasColumnType("uuid")
                         .HasColumnName("venue_id");
 
@@ -74,8 +74,8 @@ namespace contest.CompetitionService.Data.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<DateOnly?>("BirthDate")
-                        .HasColumnType("date")
+                    b.Property<DateTime>("BirthDate")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("birth_date");
 
                     b.Property<Guid>("CompetitionId")
@@ -132,8 +132,6 @@ namespace contest.CompetitionService.Data.Migrations
                     b.HasOne("contest.CompetitionService.Entities.Venue", "Venue")
                         .WithMany("Competitions")
                         .HasForeignKey("VenueId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
                         .HasConstraintName("fk_competitions_venues_venue_id");
 
                     b.Navigation("Venue");

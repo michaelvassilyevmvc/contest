@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace contest.CompetitionService.Controllers;
 
+[ApiController]
+[Route("api/competitions")]
 public class CompetitionsController : ControllerBase
 {
     private readonly CompetitionDbContext _context;
