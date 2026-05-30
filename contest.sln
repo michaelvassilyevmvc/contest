@@ -4,6 +4,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C148387A-BDA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "contest.CompetitionService", "src\contest.CompetitionService\contest.CompetitionService.csproj", "{DCFDD690-4339-4F09-8485-460E117A028C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "contest.SearchService", "src\contest.SearchService\contest.SearchService.csproj", "{923B904C-8102-408C-A35F-5D2BF91AFFD6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -11,11 +13,16 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{DCFDD690-4339-4F09-8485-460E117A028C} = {C148387A-BDA8-40F4-8AD3-83D6B71574E0}
+		{923B904C-8102-408C-A35F-5D2BF91AFFD6} = {C148387A-BDA8-40F4-8AD3-83D6B71574E0}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DCFDD690-4339-4F09-8485-460E117A028C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DCFDD690-4339-4F09-8485-460E117A028C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCFDD690-4339-4F09-8485-460E117A028C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCFDD690-4339-4F09-8485-460E117A028C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{923B904C-8102-408C-A35F-5D2BF91AFFD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{923B904C-8102-408C-A35F-5D2BF91AFFD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{923B904C-8102-408C-A35F-5D2BF91AFFD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{923B904C-8102-408C-A35F-5D2BF91AFFD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

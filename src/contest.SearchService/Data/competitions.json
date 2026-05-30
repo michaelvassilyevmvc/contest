@@ -1,0 +1,82 @@
+[
+  {
+    "id": "243410d2-2ef8-4f25-917d-97d82cc4465d",
+    "title": "Городской турнир по шахматам",
+    "sportType": "Chess",
+    "startDate": "2026-06-20T10:00:00Z",
+    "endDate": "2026-06-20T17:00:00Z",
+    "ticketPrice": 1000
+  },
+  {
+    "id": "2cf6c27a-7e4a-4fca-a800-47887f1c8470",
+    "title": "Турнир по волейболу",
+    "sportType": "Volleyball",
+    "startDate": "2026-06-24T11:00:00Z",
+    "endDate": "2026-06-24T19:00:00Z",
+    "ticketPrice": 2200
+  },
+  {
+    "id": "39bbdd30-2cf8-41f2-8493-4d4de8793a2b",
+    "title": "Открытый турнир по боксу",
+    "sportType": "Boxing",
+    "startDate": "2026-06-12T12:00:00Z",
+    "endDate": "2026-06-12T20:00:00Z",
+    "ticketPrice": 3500
+  },
+  {
+    "id": "58fb9952-173a-4bff-a8ab-a2fb3145965d",
+    "title": "Чемпионат по настольному теннису",
+    "sportType": "Table Tennis",
+    "startDate": "2026-07-02T10:00:00Z",
+    "endDate": "2026-07-02T16:00:00Z",
+    "ticketPrice": 1500
+  },
+  {
+    "id": "64ff6a9f-4e46-4bb1-baec-bbdaad3eaacb",
+    "title": "Кубок города по баскетболу",
+    "sportType": "Basketball",
+    "startDate": "2026-06-15T09:00:00Z",
+    "endDate": "2026-06-15T19:00:00Z",
+    "ticketPrice": 2000
+  },
+  {
+    "id": "66e4885b-eed6-4426-98b7-524dd33b15c5",
+    "title": "Первенство по плаванию",
+    "sportType": "Swimming",
+    "startDate": "2026-06-18T08:00:00Z",
+    "endDate": "2026-06-18T16:00:00Z",
+    "ticketPrice": 1800
+  },
+  {
+    "id": "97bcaa65-a56c-4c44-a843-2bfb5f8e2430",
+    "title": "Чемпионат города по футболу",
+    "sportType": "Football",
+    "startDate": "2026-06-10T10:00:00Z",
+    "endDate": "2026-06-10T18:00:00Z",
+    "ticketPrice": 2500
+  },
+  {
+    "id": "aab5b6cd-ed59-4e3e-9d48-52157295853c",
+    "title": "Открытое первенство по теннису",
+    "sportType": "Tennis",
+    "startDate": "2026-06-27T10:00:00Z",
+    "endDate": "2026-06-27T18:00:00Z",
+    "ticketPrice": 2700
+  },
+  {
+    "id": "d73a463c-df48-49c6-810e-e1fb3d6e338a",
+    "title": "Соревнования по лёгкой атлетике",
+    "sportType": "Athletics",
+    "startDate": "2026-06-22T09:00:00Z",
+    "endDate": "2026-06-22T18:00:00Z",
+    "ticketPrice": 3000
+  },
+  {
+    "id": "e24d098b-8276-4e1b-af02-e11eb44257cb",
+    "title": "Городской турнир по дзюдо",
+    "sportType": "Judo",
+    "startDate": "2026-06-29T09:00:00Z",
+    "endDate": "2026-06-29T17:00:00Z",
+    "ticketPrice": 3200
+  }
+]
