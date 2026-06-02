@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using contest.CompetitionService.DTOs;
 using contest.CompetitionService.Entities;
+using contest.Contracts;
 
 namespace contest.CompetitionService.RequestHelpers;
 
@@ -19,5 +20,8 @@ public class MappingProfiles : Profile
         CreateMap<Venue, VenueDto>();
         CreateMap<CreateVenueDto, Venue>();
         CreateMap<UpdateVenueDto, Venue>();
+
+        CreateMap<CompetitionDto, CompetitionCreated>();
+        CreateMap<Competition, CompetitionUpdated>();
     }
 }

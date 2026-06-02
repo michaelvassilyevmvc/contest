@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using contest.CompetitionService.Data;
@@ -11,9 +12,11 @@ using contest.CompetitionService.Data;
 namespace contest.CompetitionService.Data.Migrations
 {
     [DbContext(typeof(CompetitionDbContext))]
-    partial class CompetitionDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260601152338_outbox")]
+    partial class outbox
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

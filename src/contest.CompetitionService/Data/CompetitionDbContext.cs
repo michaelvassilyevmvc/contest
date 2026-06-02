@@ -1,4 +1,5 @@
 ﻿using contest.CompetitionService.Entities;
+using MassTransit;
 using Microsoft.EntityFrameworkCore;
 
 namespace contest.CompetitionService.Data;
@@ -30,5 +31,9 @@ public class CompetitionDbContext : DbContext
             .HasOne(x => x.Competition)
             .WithMany(x => x.Participants)
             .HasForeignKey(x => x.CompetitionId);
+        
+        modelBuilder.AddInboxStateEntity();
+        modelBuilder.AddOutboxStateEntity();
+        modelBuilder.AddOutboxMessageEntity();
     }
 }

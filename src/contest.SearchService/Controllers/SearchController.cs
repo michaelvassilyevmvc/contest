@@ -15,9 +15,9 @@ public class SearchController : ControllerBase
         var query = DB.PagedSearch<Competition, Competition>();
         query.Sort(x => x.Ascending(a => a.Title));
 
-        if (!string.IsNullOrEmpty(searchParams.SearchTerms))
+        if (!string.IsNullOrEmpty(searchParams.SearchTerm))
         {
-            query.Match(MongoDB.Entities.Search.Full, searchParams.SearchTerms)
+            query.Match(MongoDB.Entities.Search.Full, searchParams.SearchTerm)
                 .SortByTextScore();
         }
 
