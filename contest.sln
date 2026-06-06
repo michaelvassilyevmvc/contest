@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "contest.SearchService", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "contest.Contracts", "src\contest.Contracts\contest.Contracts.csproj", "{0B61CF85-0C8A-4154-8AA4-655027997C50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "contest.IdentityService", "src\contest.IdentityService\contest.IdentityService.csproj", "{DD9109E1-9981-4440-953B-293172A4A4C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,7 @@ Global
 		{DCFDD690-4339-4F09-8485-460E117A028C} = {C148387A-BDA8-40F4-8AD3-83D6B71574E0}
 		{923B904C-8102-408C-A35F-5D2BF91AFFD6} = {C148387A-BDA8-40F4-8AD3-83D6B71574E0}
 		{0B61CF85-0C8A-4154-8AA4-655027997C50} = {C148387A-BDA8-40F4-8AD3-83D6B71574E0}
+		{DD9109E1-9981-4440-953B-293172A4A4C1} = {C148387A-BDA8-40F4-8AD3-83D6B71574E0}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DCFDD690-4339-4F09-8485-460E117A028C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -31,5 +34,9 @@ Global
 		{0B61CF85-0C8A-4154-8AA4-655027997C50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B61CF85-0C8A-4154-8AA4-655027997C50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B61CF85-0C8A-4154-8AA4-655027997C50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD9109E1-9981-4440-953B-293172A4A4C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD9109E1-9981-4440-953B-293172A4A4C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD9109E1-9981-4440-953B-293172A4A4C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD9109E1-9981-4440-953B-293172A4A4C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

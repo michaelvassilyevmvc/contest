@@ -4,6 +4,7 @@ using contest.CompetitionService.DTOs;
 using contest.CompetitionService.Entities;
 using contest.Contracts;
 using MassTransit;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -45,6 +46,7 @@ public class CompetitionsController : ControllerBase
         return Ok(_mapper.Map<CompetitionDto>(competition));
     }
 
+    [Authorize]
     [HttpPost]
     public async Task<ActionResult<Competition>> CreateCompetition(CreateCompetitionDto createCompetitionDto)
     {
@@ -63,6 +65,7 @@ public class CompetitionsController : ControllerBase
             _mapper.Map<CompetitionDto>(competition));
     }
 
+    [Authorize]
     [HttpPut("{id}")]
     public async Task<ActionResult<CompetitionDto>> UpdateCompetition(Guid id,
         UpdateCompetitionDto updateCompetitionDto)
@@ -84,6 +87,7 @@ public class CompetitionsController : ControllerBase
         return BadRequest("Couldn't save changes to the DB");
     }
 
+    [Authorize]
     [HttpDelete("{id}")]
     public async Task<ActionResult> DeleteCompetition(Guid id)
     {
